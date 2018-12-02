@@ -1,0 +1,32 @@
+a {
+    font-weight: bold;
+    /*display: inline-block;*/
+    /*padding: 5px 10px;*/
+    /*letter-spacing: 1px;*/
+    /*font-size: 16px;*/
+    /*font-family: 'Fredoka One', cursive;*/
+    /*transition: .3s ease-in-out;*/
+    /*list-style-type: none;*/
+}
+
+ul.nav {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+    border-bottom: 1px dashed #000000;
+}
+
+.nav li {
+    display: inline;
+    margin-right: -5px;
+}
+
+.nav a {
+    display: inline-block;
+    border: 1px dashed #000000;
+    border-bottom: none;
+    padding: 5px 15px 5px 15px;
+    background-color: #EAEAEA;
+    text-decoration: none;
+    color: #333333;
+}

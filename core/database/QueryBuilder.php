@@ -22,4 +22,10 @@ class QueryBuilder
     {
         $this->pdo->query("DELETE FROM $table WHERE id = $id");
     }
+
+    public function insertName($table, $input_name)
+    {
+        $this->pdo->query("INSERT INTO $table(name) VALUES('$input_name') ");
+    }
+
 }
