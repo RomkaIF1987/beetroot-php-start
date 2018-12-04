@@ -23,9 +23,22 @@ class QueryBuilder
         $this->pdo->query("DELETE FROM $table WHERE id = $id");
     }
 
-    public function insertName($table, $input_name)
+    public function insert($table, $parameters)
     {
-        $this->pdo->query("INSERT INTO $table(name) VALUES('$input_name') ");
-    }
+        $query = sprintf(
+            "INSERT INTO %s (%s) VALUES(%s)",
+            $table,
+            implode(", ", array_keys($parameters)),
+            ":" . implode(", :", array_keys($parameters))
+    );
+
+     try {
+         $s = $this->pdo->prepare($query);
+         $s->execute($parameters);
+         return true;
+     } catch (\PDOException $exeption) {
+         return false;
+     }
+            }
 
 }
