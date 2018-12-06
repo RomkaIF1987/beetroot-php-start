@@ -2,7 +2,7 @@
 return [
     'database' => [
         'host' => 'localhost',
-        'db'   => 'Client',
+        'db'   => 'Part1',
         'user' => 'root',
         'pass' => '1'
 

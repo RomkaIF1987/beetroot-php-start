@@ -13,7 +13,7 @@ if (!empty($newName)) {
     return false;
 }
 
-$result = $app['database']->insert('clients', ['name' => $newName]);
+$result = $app['database']->insert('users', ['name' => $newName]);
 
 if ($result) {
     header('Location: /');

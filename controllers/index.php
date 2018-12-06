@@ -1,9 +1,9 @@
 <?php
 
-require 'Client.php';
+require 'User.php';
 
 
-$clients = $app['database']->selectAll('clients', 'Client');
+$clients = $app['database']->selectAll('users', 'User');
 
 
 require 'views/index.view.php';
