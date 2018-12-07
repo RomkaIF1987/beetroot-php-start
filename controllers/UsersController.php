@@ -6,7 +6,7 @@
  * Time: 19:29
  */
 
-class Users
+class UsersController
 {
     public function index()
     {
