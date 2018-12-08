@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class App
 {
     protected static $registry = [];
@@ -12,7 +14,7 @@ class App
     public static function get($key)
     {
         if (! isset (self::$registry[$key])) {
-            throw new Exception("This registry dont have $key");
+            throw new \Exception("This registry dont have $key");
         }
         return self::$registry[$key];
     }

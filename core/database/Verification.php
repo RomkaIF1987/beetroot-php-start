@@ -1,5 +1,7 @@
 <?php
 
+namespace Core\Database;
+
 class Verification
 {
     public static function cleanInput($value)

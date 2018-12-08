@@ -1,5 +1,9 @@
 <?php
 
+namespace Core\Database;
+
+use PDO;
+
 class QueryBuilder
 {
     /**
@@ -30,15 +34,15 @@ class QueryBuilder
             $table,
             implode(", ", array_keys($parameters)),
             ":" . implode(", :", array_keys($parameters))
-    );
+        );
 
-     try {
-         $s = $this->pdo->prepare($query);
-         $s->execute($parameters);
-         return true;
-     } catch (\PDOException $exeption) {
-         return false;
-     }
-            }
+        try {
+            $s = $this->pdo->prepare($query);
+            $s->execute($parameters);
+            return true;
+        } catch (\PDOException $exeption) {
+            return false;
+        }
+    }
 
 }

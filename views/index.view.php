@@ -1,8 +1,14 @@
 <?php require 'partials/header.view.php';?>
+<p>This is page ASK NAME</p>
+<br>
+<form action="users" method="POST">
+    <input type="text" name="name" placeholder="Введіть своє ім'я">
+    <button type="submit" value="SEND">SEND</button>
+</form>
 
 <ul>
-    <?php foreach ($clients as $client) : ?>
-        <li><?= $client->getFullName() ?></li>
+    <?php foreach ($users as $user) : ?>
+        <li><?= $user->getFullName() ?></li>
         <br>
     <?php endforeach; ?>
 </ul>

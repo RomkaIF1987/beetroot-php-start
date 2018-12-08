@@ -1,5 +1,9 @@
 <?php
 
+namespace Core\Database;
+
+use PDO;
+
 class Connection
 {
 
@@ -27,5 +31,3 @@ class Connection
         return $pdo;
     }
 }
-
-

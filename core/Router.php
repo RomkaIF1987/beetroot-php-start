@@ -1,4 +1,5 @@
 <?php
+namespace Core;
 
 class Router
 {
@@ -36,7 +37,7 @@ class Router
     {
         $url = parse_url($url, PHP_URL_PATH);
         if (! isset ($this->routes[$method][$url])) {
-            throw new Exception('Page not found');
+            throw new \Exception('Page not found');
         }
             $array = explode('@', $this->routes[$method][$url]);
 
@@ -46,10 +47,11 @@ class Router
 
     public function callAction($controller, $action)
     {
+        $controller = '\App\Controllers\\'. $controller;
         $controller = new $controller;
 
         if (! method_exists($controller,$action)) {
-            throw new Exception('Action don\'t exist');
+            throw new \Exception('Action don\'t exist');
         }
         return $controller->$action();
     }
