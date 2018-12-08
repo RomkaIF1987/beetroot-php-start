@@ -4,6 +4,7 @@ namespace Core\Database;
 
 use PDO;
 
+
 class QueryBuilder
 {
     /**
@@ -19,7 +20,7 @@ class QueryBuilder
     public function selectAll($table, $className)
     {
         $stmt = $this->pdo->query("SELECT * FROM $table");
-        return $stmt->fetchAll(PDO::FETCH_CLASS, $className);
+        return $stmt->fetchAll(PDO::FETCH_CLASS, 'App\Models\\' . $className);
     }
 
     public function deleteRow($table, $id)
