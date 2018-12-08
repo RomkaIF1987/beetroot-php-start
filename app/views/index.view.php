@@ -1,5 +1,5 @@
 <?php require 'partials/header.view.php';?>
-<p>This is page ASK NAME</p>
+<p><h1>HOME PAGE</h1></p>
 <br>
 <form action="users" method="POST">
     <input type="text" name="name" placeholder="Введіть своє ім'я">

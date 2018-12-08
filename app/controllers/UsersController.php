@@ -20,22 +20,14 @@ class UsersController
     public function store()
     {
         $newName = $_POST['name'];
+
         $newName = Verification::cleanInput($newName);
-        if (!empty($newName)) {
-            if (Verification::checkLength($newName, 2, 20)) {
-            } else {
-                echo "<h1 style='color: red'>Введені некоректні дані</h1> <p><a href='/users'>ПОВЕРНУТИСЯ НАЗАД</a></p>";
-                return false;
-            }
-        } else {
-            echo "<h1 style='color: red'>Заповніть пусті поля</h1> <p><a href='/users'>ПОВЕРНУТИСЯ НАЗАД</a></p>";
-            return false;
-        }
+        $newName = Verification::inputAudit($newName);
 
         $result = App::get('database')->insert('users', ['name' => $newName]);
 
         if ($result) {
-            redirect(users);
+            redirect('users');
         } else {
             echo 'Query exeption';
         }

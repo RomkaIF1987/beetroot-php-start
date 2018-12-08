@@ -17,6 +17,6 @@ class PagesController
 
     public function index()
     {
-        view('users');
+        UsersController::index();
     }
 }

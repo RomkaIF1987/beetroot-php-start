@@ -9,13 +9,9 @@ class User
     public $lastName;
     public $mobilePhone;
 
-    public function nameIgor()
-    {
-        $this->name = 'Igor';
-    }
-
-    public function getFullName()
+        public function getFullName()
     {
         return $this->name . ' ' . $this->lastName;
     }
 }
+
